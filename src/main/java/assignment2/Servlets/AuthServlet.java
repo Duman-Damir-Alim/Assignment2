@@ -15,11 +15,11 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String side = request.getParameter("side");
-        if (username.equals("")){
+        if (username.equals("")) {
             request.setAttribute("error", "Username cannot be empty");
             request.getRequestDispatcher("./jsp/assignment2/auth.jsp").forward(request, response);
         }
-        if (username.length() > 5){
+        if (username.length() > 5) {
             request.setAttribute("error", "Username less than 5 characters");
             request.getRequestDispatcher("./jsp/assignment2/auth.jsp").forward(request, response);
         }

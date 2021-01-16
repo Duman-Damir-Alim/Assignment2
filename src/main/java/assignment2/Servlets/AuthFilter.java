@@ -16,10 +16,10 @@ public class AuthFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpSession session = request.getSession(false);
         String uri = request.getRequestURI();
-        if (session != null && session.getAttribute("user") == null && !(uri.endsWith("auth"))){
+        if (session != null && session.getAttribute("user") == null && !(uri.endsWith("auth"))) {
             System.out.println("Not found session");
             resp.getWriter().write("Unauthorized user request");
-        }else{
+        } else {
             chain.doFilter(req, resp);
         }
     }

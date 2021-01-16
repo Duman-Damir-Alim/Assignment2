@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 <html>
 <head>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -14,23 +14,27 @@
     </style>
 </head>
 <body>
+
+<%--Chess Board... TODO--%>
+
+
 <div class="container">
     <div class="form-container">
-        <form action="" method="post">
+        <form action="client" method="post">
             <div class="mb-3">
-                <label for="username" class="form-label">StartX</label>
+                <label for="startX" class="form-label">StartX</label>
                 <input type="number" class="form-control" id="startX" name="startX" placeholder="Enter StartX">
             </div>
             <div class="mb-3">
-                <label for="side" class="form-label">StartY</label>
+                <label for="startY" class="form-label">StartY</label>
                 <input type="number" class="form-control" id="startY" name="startY" placeholder="Enter StartY">
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">EndX</label>
-                <input type="number" class="form-control" id="EndX" name="EndX" placeholder="Enter EndX">
+                <label for="endX" class="form-label">EndX</label>
+                <input type="number" class="form-control" id="endX" name="endX" placeholder="Enter endX">
             </div>
             <div class="mb-3">
-                <label for="" class="form-label">EndY</label>
+                <label for="endY" class="form-label">EndY</label>
                 <input type="number" class="form-control" id="endY" name="endY" placeholder="Enter endY">
             </div>
             <button type="submit" class="btn btn-primary">Enter</button>
