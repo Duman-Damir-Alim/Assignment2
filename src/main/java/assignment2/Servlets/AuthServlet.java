@@ -1,4 +1,6 @@
-package assignment2;
+package assignment2.Servlets;
+
+import assignment2.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package assignment2;
+package assignment2.Servlets;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

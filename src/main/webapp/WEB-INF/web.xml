@@ -6,7 +6,7 @@
 
     <filter>
         <filter-name>AuthFilter</filter-name>
-        <filter-class>assignment2.AuthFilter</filter-class>
+        <filter-class>assignment2.Servlets.AuthFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>Auth</servlet-name>
-        <servlet-class>assignment2.AuthServlet</servlet-class>
+        <servlet-class>assignment2.Servlets.AuthServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Auth</servlet-name>
@@ -25,10 +25,27 @@
 
     <servlet>
         <servlet-name>Chess</servlet-name>
-        <servlet-class>assignment2.ChessServlet</servlet-class>
+        <servlet-class>assignment2.Servlets.ChessServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Chess</servlet-name>
         <url-pattern>/chess</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientServlet</servlet-name>
+        <servlet-class>assignment2.Servlets.Networking.ClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientServlet</servlet-name>
+        <url-pattern>/client</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServerServlet</servlet-name>
+        <servlet-class>assignment2.Servlets.Networking.ServerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServerServlet</servlet-name>
+        <url-pattern>/server</url-pattern>
     </servlet-mapping>
 </web-app>
