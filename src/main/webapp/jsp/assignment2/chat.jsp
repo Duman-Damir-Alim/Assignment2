@@ -232,12 +232,15 @@
                 this.ws = new WebSocket("ws://localhost:8088/first_servlet_project_war/chat")
                 this.username = "<%=((User) session.getAttribute("user")).getUsername()%>"
                 this.ws.onopen = () => this.onOpenSocket()
-                this.ws.onmessage = (e) => this.onMessage(JSON.parse(e.data))
+                this.ws.onmessage = (e) => {
+                    console.log("onMessage(): ", e)
+                    this.onMessage(JSON.parse(e.data))
+                }
                 this.ws.onclose = () => this.onClose();
             },
 
         }
-        window.addEventListener("load", e => chatUnit.init())
+        window.addEventListener("load", () => chatUnit.init())
     </script>
 </div>
 </body>

@@ -14,6 +14,6 @@ public class ChessServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("./jsp/assignment2/chess.jsp").forward(request, response);
+        request.getRequestDispatcher("./jsp/assignment2/chess/index.jsp").forward(request, response);
     }
 }

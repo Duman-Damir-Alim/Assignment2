@@ -1,4 +1,4 @@
-<%--
+<%@ page import="assignment2.User" %><%--
   Created by IntelliJ IDEA.
   User: rakhad
   Date: 1/17/21
@@ -26,7 +26,7 @@
 <body>
 <div class="container">
     <div class="center">
-        <h3 class="text-center">Hello, Shyngys!</h3>
+        <h3 class="text-center">Hello, <%=((User)session.getAttribute("user")).getUsername()%></h3>
         <h3 class="text-center">Welcome to our Chess Club</h3><br>
         <div class="text-center">
             <a class="btn btn-primary" href="chat">Communicate with players</a><hr>
