@@ -1,5 +1,6 @@
 package assignment2.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,15 +30,16 @@ public class Game {
     }
 
     //call this method from outside after make move
-    public Board getNewBoard() {
+    public Board getBoard() {
         return board;
     }
 
     //if isCurrentTurn() true, call this method
-    private void initialize(Player player) {
+    public void initialize(Player player) {
         this.player = player;
+        board = new Board();
         board.resetBoard();
-        movesPlayed.clear();
+        movesPlayed = new ArrayList<>();
     }
 
     public boolean isEnd() {
@@ -93,13 +95,17 @@ public class Game {
         movesPlayed.add(move);
 
         // move piece from the start box to end box
+        System.out.println("Moving piece...");
+        System.out.printf("Coordinates: startX: %d, startY: %d, endX: %d, endY: %d \n", move.getStart().getX(), move.getStart().getY(), move.getEnd().getX(), move.getEnd().getY());
+        System.out.println("Before move: " +
+                board.getBox(move.getStart().getX(), move.getStart().getY()).getPiece());
+
         move.getEnd().setPiece(move.getStart().getPiece());
         move.getStart().setPiece(null);
 
-        //update board
-        board.getBoxes()[move.getStart().getY()][move.getStart().getX()] =
-                board.getBoxes()[move.getEnd().getY()][move.getEnd().getX()];
-//Client sends data(board, status) to server. But status is not realized yet TODO
+        System.out.println("After move: " +
+                board.getBox(move.getStart().getX(), move.getStart().getY()).getPiece());
+
         return true;
 //        if (destPiece != null) {
 //            if (player.isWhiteSide()) {
@@ -109,7 +115,5 @@ public class Game {
 //                this.setStatus(GameStatus.BLACK_WIN);
 //            }
 //        }
-
-        // set the current turn to the other player
     }
 }

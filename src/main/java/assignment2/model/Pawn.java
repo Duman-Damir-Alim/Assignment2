@@ -6,15 +6,6 @@ public class Pawn extends Piece {
         super(white);
     }
 
-//    public Spot[][] move(Board board, Spot start, Spot end) {
-//        if (!canMove(board, start, end)) {
-//            return board.getBoxes();
-//        }
-//        Spot[][] spots = board.getBoxes();
-//        spots[start.getX()][start.getY()] = new Spot(end.getX(), end.getY(), this);
-//        return spots;
-//    }
-
     @Override
     public boolean canMove(Board board, Spot start, Spot end) {
         int startx = start.getX();
@@ -24,10 +15,10 @@ public class Pawn extends Piece {
         int y = end.getY();
 
 
-        //check for friends
-        if (end.getPiece().isWhite() == this.isWhite()) {
-            return false;
-        }
+        //check for friends TODO
+//        if (end.getPiece().isWhite() == this.isWhite()) {
+//            return false;
+//        }
 
         //cant go backwards
         if (start.getPiece().isWhite()) {
