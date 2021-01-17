@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    
     <filter>
         <filter-name>AuthFilter</filter-name>
         <filter-class>assignment2.Servlets.AuthFilter</filter-class>
@@ -48,4 +48,26 @@
         <servlet-name>ServerServlet</servlet-name>
         <url-pattern>/server</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Chat</servlet-name>
+        <servlet-class>assignment2.Servlets.ChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Chat</servlet-name>
+        <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>assignment2.Servlets.MainServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 </web-app>

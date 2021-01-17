@@ -14,12 +14,15 @@ public class AuthFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession(false);
         String uri = request.getRequestURI();
         if (session != null && session.getAttribute("user") == null && !(uri.endsWith("auth"))) {
             System.out.println("Not found session");
-            resp.getWriter().write("Unauthorized user request");
-        } else {
+            response.sendRedirect("auth");
+        } else if (session != null && session.getAttribute("user") != null && uri.endsWith("auth")) {
+            response.sendRedirect("main");
+        }else{
             chain.doFilter(req, resp);
         }
     }
