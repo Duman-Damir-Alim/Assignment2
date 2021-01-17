@@ -1,23 +1,23 @@
 package assignment2.Servlets.Networking;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-//Currently no fucking idea how to realize server as a servlet TODO
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-@WebServlet(name = "ServerServlet")
-public class ServerServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class ServerServlet {
+    public static void main(String[] args) throws IOException {
+        ServerSocket ss = new ServerSocket(8189);
+        Socket s = ss.accept();
+        System.out.println("Client connected");
 
-    }
+        InputStreamReader in = new InputStreamReader(s.getInputStream());
+        BufferedReader bf = new BufferedReader(in);
+        PrintWriter pr = new PrintWriter(s.getOutputStream());
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        ss.close();
+        s.close();
+        in.close();
     }
 }
