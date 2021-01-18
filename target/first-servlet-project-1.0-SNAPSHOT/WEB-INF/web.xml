@@ -10,18 +10,11 @@
     </filter>
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <servlet>
-        <servlet-name>Auth</servlet-name>
-        <servlet-class>assignment2.Servlets.AuthServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Auth</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/chess</url-pattern>
+        <url-pattern>/chat</url-pattern>
         <url-pattern>/auth</url-pattern>
-    </servlet-mapping>
+        <url-pattern>/main</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>Chess</servlet-name>
@@ -30,6 +23,16 @@
     <servlet-mapping>
         <servlet-name>Chess</servlet-name>
         <url-pattern>/chess</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Auth</servlet-name>
+        <servlet-class>assignment2.Servlets.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Auth</servlet-name>
+        <url-pattern>/auth</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -65,6 +68,15 @@
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>assignment2.Servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <session-config>

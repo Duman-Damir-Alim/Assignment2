@@ -31,8 +31,7 @@
         <div class="text-center">
             <a class="btn btn-primary" href="chat">Communicate with players</a><hr>
             <a class="btn btn-primary" href="chess" >Play Chess Online</a><hr>
-            <form action="auth" method="post">
-                <input type="hidden" value="logout" name="method">
+            <form action="logout" method="post">
                 <button type="submit" class="btn btn-secondary">Log out</button>
             </form>
         </div>

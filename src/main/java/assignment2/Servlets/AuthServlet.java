@@ -13,15 +13,9 @@ import java.io.IOException;
 @WebServlet(name = "AuthServlet")
 public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String method = request.getParameter("method");
+        HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String side = request.getParameter("side");
-        HttpSession session = request.getSession();
-        if (method != null && method.equals("logout")){
-            session.invalidate();
-            response.sendRedirect("auth");
-            return;
-        }
         if (username.equals("")) {
             request.setAttribute("error", "Username cannot be empty");
             request.getRequestDispatcher("./jsp/assignment2/auth.jsp").forward(request, response);
